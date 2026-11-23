@@ -8,7 +8,7 @@ Foram lidas as nove imagens e os três arquivos de referência da pasta `exercic
 
 | Exercício | O que pede e formato | Arquivos entregues | Estado |
 |---|---|---|---|
-| Parte 1 | Marketplace Node/Express **em memória**; visão geral de vendedores, produtos e compras | `parte1/index.js` | Entregue; IDs numéricos e rotas do exemplo |
+| Parte 1 | Marketplace Node/Express **em memória**; visão geral de vendedores, produtos e compras | `parte1/index.js`, `docs/Parte-1-visao-geral.md` | Entregue; IDs numéricos e rotas do exemplo |
 | Parte 2 | Iniciar `node index.js`, executar cinco requisições na ordem indicada e **postar o resultado** | `docs/Parte-2-teste-api.md`, `docs/Parte-2-resultado.json` | Entregue; cinco respostas reais e estoque 5 → 3 |
 | Parte 3 | Substituir a implementação em memória por MongoDB/Mongoose, com `.env` contendo a URI | `src/models.js`, `src/index.js`, `.env.example`, `docs/Parte-3-resultado.md` | Código e fluxo HTTP testados em MongoDB temporário; URI persistente local configurável em `.env` |
 | Parte 4 | Seed sem índices adicionais, 1k produtos, 5k usuários, 100k pedidos em lotes; apresentar amostra | `scripts/seed.js`, `scripts/create-sample.js`, `exercicios/Parte-4-amostra.json`, `docs/Parte-4-seed.md` | Seed rodou em MongoDB temporário e as contagens foram validadas; amostra anexada |

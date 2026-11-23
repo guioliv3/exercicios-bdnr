@@ -6,7 +6,7 @@ Projeto Node.js/Express para os exercícios de marketplace e engenharia de dados
 
 | Exercício | Implementação | Evidência e apresentação | Situação atual |
 |---|---|---|---|
-| Parte 1 — Marketplace em memória | [API da Parte 1](parte1/index.js) | [Fluxo](docs/Parte-2-teste-api.md) | Implementado. |
+| Parte 1 — Marketplace em memória | [API da Parte 1](parte1/index.js) | [Visão geral e execução](docs/Parte-1-visao-geral.md) | Implementado. |
 | Parte 2 — Teste da API | [Reprodução automática](scripts/capture-part2.js) | [Cinco respostas e estoque final](docs/Parte-2-resultado.json) | Executado: pedido de R$ 500 e estoque de 5 para 3. |
 | Parte 3 — Persistência | [Modelos Mongoose](src/models.js), [API](src/marketplace.js), [inicialização](src/index.js) | [Teste HTTP](docs/Parte-3-resultado.md), [configuração](.env.example) | Implementado e testado em MongoDB real temporário. |
 | Parte 4 — Seed | [Script](scripts/seed.js) | [Amostra do banco](exercicios/Parte-4-amostra.json), [instruções](docs/Parte-4-seed.md) | Executado: 1.000 produtos, 5.000 usuários e 100.000 pedidos. |
@@ -33,7 +33,7 @@ Copy-Item .env.example .env
 npm start
 ```
 
-O arquivo `.env` é ignorado pelo Git; publique somente `.env.example`. As rotas são `POST /usuarios`, `POST /produtos`, `GET /produtos` e `POST /pedidos`. Na versão MongoDB, cadastre o comprador com `saldoInicial: 1000` para demonstrar a compra. A versão em memória funciona com os IDs numéricos do enunciado: execute `node parte1/index.js` ou consulte o [resultado da Parte 2](docs/Parte-2-teste-api.md).
+O arquivo `.env` é ignorado pelo Git; publique somente `.env.example`. As rotas são `POST /usuarios`, `POST /produtos`, `GET /produtos` e `POST /pedidos`. Na versão MongoDB, cadastre o comprador com `saldoInicial: 1000` para demonstrar a compra. A [Parte 1](docs/Parte-1-visao-geral.md) usa IDs numéricos e pode ser iniciada com `node parte1/index.js`; os resultados das chamadas estão na [Parte 2](docs/Parte-2-teste-api.md).
 
 ## Seed, análise e testes
 
