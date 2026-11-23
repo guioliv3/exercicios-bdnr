@@ -2,6 +2,8 @@
 
 Projeto Node.js/Express para os exercícios de marketplace e engenharia de dados. A Parte 1 usa armazenamento em memória; a Parte 3 usa MongoDB/Mongoose. Inclui seed de 106 mil documentos, pipelines de agregação, diagnóstico de índice e checkout transacional.
 
+**[Veja as respostas obtidas no MongoDB](docs/RESPOSTAS-MONGODB.md)** — resultados da API persistente, seed, agregações, `explain` e transação em um único lugar.
+
 ## Entregas
 
 | Exercício | Implementação | Evidência e apresentação | Situação atual |
