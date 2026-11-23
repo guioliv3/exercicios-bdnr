@@ -1,0 +1,59 @@
+{
+  "generatedAt": "2026-11-23T20:14:28.265Z",
+  "counts": {
+    "products": 1000,
+    "users": 5000,
+    "orders": 100000
+  },
+  "sample": {
+    "products": {
+      "_id": "6b049e9a8eb62f2a094d8d79",
+      "sku": "SKU-00001",
+      "name": "Produto Exemplo 1",
+      "category": "Casa e Cozinha",
+      "price": 24.46,
+      "stock": 289,
+      "sellerId": "SELLER-50",
+      "active": true
+    },
+    "users": {
+      "_id": "6b049e9a8eb62f2a094d9161",
+      "name": "Cliente 1",
+      "email": "cliente1@exemplo.com",
+      "city": "Belo Horizonte",
+      "walletBalance": 1770.92,
+      "createdAt": "2026-11-01T20:14:18.593Z"
+    },
+    "orders": {
+      "_id": "6b049e9b8eb62f2a094da4e9",
+      "userId": "6b049e9a8eb62f2a094d9645",
+      "shippingCity": "Rio de Janeiro",
+      "status": "DELIVERED",
+      "items": [
+        {
+          "productId": "6b049e9a8eb62f2a094d8e00",
+          "sku": "SKU-00136",
+          "category": "Livros",
+          "unitPrice": 375.77,
+          "quantity": 3
+        },
+        {
+          "productId": "6b049e9a8eb62f2a094d8f5d",
+          "sku": "SKU-00485",
+          "category": "Esportes",
+          "unitPrice": 226.94,
+          "quantity": 1
+        },
+        {
+          "productId": "6b049e9a8eb62f2a094d9002",
+          "sku": "SKU-00650",
+          "category": "Eletrônicos",
+          "unitPrice": 490.69,
+          "quantity": 2
+        }
+      ],
+      "totalAmount": 2335.63,
+      "createdAt": "2026-07-24T20:14:19.159Z"
+    }
+  }
+}

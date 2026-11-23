@@ -1,0 +1,24 @@
+{
+  "name": "marketplace-mongodb-exercicios",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Entregas das partes 1-4 e tarefas 1-4 de Engenharia de Dados com MongoDB",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "seed": "node scripts/seed.js",
+    "test": "node --test",
+    "test:mongodb": "node --test tests/mongodb.test.js",
+    "report:explain": "node scripts/explain.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.5"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.1.4",
+    "mongodb-memory-server-core": "^10.1.4"
+  }
+}

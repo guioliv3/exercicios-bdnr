@@ -1,0 +1,17 @@
+node_modules/
+.env
+coverage/
+
+# Enunciados e referências recebidos apenas para identificar os exercícios.
+/exercicios/Parte1.png
+/exercicios/Parte-2.png
+/exercicios/Parte-3.png
+/exercicios/Parte-4.png
+/exercicios/Engenharia-Tarefa1.png
+/exercicios/Engenharia-Tarefa2.png
+/exercicios/Engenharia-Tarefa2.1.png
+/exercicios/Engenharia-Tarefa3.png
+/exercicios/Engenharia-Tarefa4.png
+/exercicios/exemplo_markplace.txt
+/exercicios/exemplo_mongodb.txt
+/exercicios/seed.txt
