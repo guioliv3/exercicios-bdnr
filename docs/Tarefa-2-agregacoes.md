@@ -22,4 +22,4 @@ db.orders.aggregate([
 ])
 ```
 
-Os pipelines foram exercitados em um replica set MongoDB efêmero pelo teste automatizado. Para relatório sobre a base de 100 mil pedidos, rode `npm run seed` e execute as consultas acima.
+Os pipelines foram executados no MongoDB sobre a base completa do seed. As tabelas de faturamento, os dez clientes da primeira página e a contagem total de clientes elegíveis estão em [Tarefa-2-resultados.md](Tarefa-2-resultados.md). Para gerar uma nova amostra, rode `npm run report:all`.

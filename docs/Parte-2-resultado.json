@@ -1,0 +1,84 @@
+{
+  "results": [
+    {
+      "method": "POST",
+      "route": "/usuarios",
+      "request": {
+        "nome": "Loja Tech",
+        "tipo": "vendedor"
+      },
+      "status": 201,
+      "response": {
+        "id": 1,
+        "nome": "Loja Tech",
+        "tipo": "vendedor"
+      }
+    },
+    {
+      "method": "POST",
+      "route": "/usuarios",
+      "request": {
+        "nome": "João Silva",
+        "tipo": "comprador"
+      },
+      "status": 201,
+      "response": {
+        "id": 2,
+        "nome": "João Silva",
+        "tipo": "comprador"
+      }
+    },
+    {
+      "method": "POST",
+      "route": "/produtos",
+      "request": {
+        "vendedorId": 1,
+        "nome": "Teclado Mecânico",
+        "preco": 250,
+        "estoque": 5
+      },
+      "status": 201,
+      "response": {
+        "id": 1,
+        "vendedorId": 1,
+        "nome": "Teclado Mecânico",
+        "preco": 250,
+        "estoque": 5
+      }
+    },
+    {
+      "method": "GET",
+      "route": "/produtos",
+      "request": null,
+      "status": 200,
+      "response": [
+        {
+          "id": 1,
+          "vendedorId": 1,
+          "nome": "Teclado Mecânico",
+          "preco": 250,
+          "estoque": 5
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "route": "/pedidos",
+      "request": {
+        "compradorId": 2,
+        "produtoId": 1,
+        "quantidade": 2
+      },
+      "status": 201,
+      "response": {
+        "id": 1,
+        "compradorId": 2,
+        "produtoId": 1,
+        "quantidade": 2,
+        "valorTotal": 500,
+        "data": "2026-11-23T22:08:39.023Z"
+      }
+    }
+  ],
+  "estoqueAposCompra": 3
+}

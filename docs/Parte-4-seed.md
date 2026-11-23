@@ -8,4 +8,4 @@ db.users.findOne()
 db.orders.findOne()
 ```
 
-Após executar, valide com `db.products.countDocuments()`, `db.users.countDocuments()` e `db.orders.countDocuments()` (esperados: 1.000, 5.000 e 100.000). **Atenção:** o script executa `dropDatabase()` no banco configurado antes de semear; use uma base de exercícios descartável.
+Após executar, valide com `db.products.countDocuments()`, `db.users.countDocuments()` e `db.orders.countDocuments()` (esperados: 1.000, 5.000 e 100.000). Uma amostra real dos três tipos de documento está em [Parte-4-amostra.json](../exercicios/Parte-4-amostra.json). **Atenção:** o script executa `dropDatabase()` no banco configurado antes de semear; use uma base de exercícios descartável.

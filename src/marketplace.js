@@ -7,7 +7,7 @@ function createApp() {
 
   app.post('/usuarios', async (req, res) => {
     try {
-      const user = await User.create({ name: req.body.nome, type: req.body.tipo });
+      const user = await User.create({ name: req.body.nome, type: req.body.tipo, walletBalance: req.body.saldoInicial ?? 0 });
       res.status(201).json(user);
     } catch (e) { res.status(400).json({ erro: 'Dados inválidos para cadastro.', detalhes: e.message }); }
   });

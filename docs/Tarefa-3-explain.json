@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-11-23T22:10:46.049Z",
+  "documents": 100000,
+  "index": {
+    "shippingCity": 1,
+    "status": 1,
+    "createdAt": -1
+  },
+  "metrics": {
+    "before": {
+      "executionTimeMillis": 135,
+      "stage": "COLLSCAN",
+      "totalDocsExamined": 100000
+    },
+    "after": {
+      "executionTimeMillis": 6,
+      "stage": "IXSCAN",
+      "totalDocsExamined": 489
+    }
+  }
+}

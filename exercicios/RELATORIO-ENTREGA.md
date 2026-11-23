@@ -8,14 +8,14 @@ Foram lidas as nove imagens e os três arquivos de referência da pasta `exercic
 
 | Exercício | O que pede e formato | Arquivos entregues | Estado |
 |---|---|---|---|
-| Parte 1 | Marketplace Node/Express **em memória**; visão geral de vendedores, produtos e compras | `src/index.js`, `src/marketplace.js`, `src/models.js` | **Parcial**: a API atual usa MongoDB; falta a versão inicial em memória pedida pelo print |
-| Parte 2 | Iniciar `node index.js`, executar cinco requisições na ordem indicada e **postar o resultado** | `docs/Parte-2-teste-api.md`, `tests/mongodb.test.js` | **Parcial**: há roteiro e teste automatizado, mas falta um registro apresentável das respostas reais da sequência; a API atual usa ObjectIds e exige saldo para a compra |
-| Parte 3 | Substituir a implementação em memória por MongoDB/Mongoose, com `.env` contendo a URI | `src/models.js`, `src/index.js`, `.env.example` | **Parcial**: persistência implementada e template de `.env` fornecido; não há `.env` configurado nem banco local persistente |
+| Parte 1 | Marketplace Node/Express **em memória**; visão geral de vendedores, produtos e compras | `parte1/index.js` | Entregue; IDs numéricos e rotas do exemplo |
+| Parte 2 | Iniciar `node index.js`, executar cinco requisições na ordem indicada e **postar o resultado** | `docs/Parte-2-teste-api.md`, `docs/Parte-2-resultado.json` | Entregue; cinco respostas reais e estoque 5 → 3 |
+| Parte 3 | Substituir a implementação em memória por MongoDB/Mongoose, com `.env` contendo a URI | `src/models.js`, `src/index.js`, `.env.example`, `docs/Parte-3-resultado.md` | Código e fluxo HTTP testados em MongoDB temporário; URI persistente local configurável em `.env` |
 | Parte 4 | Seed sem índices adicionais, 1k produtos, 5k usuários, 100k pedidos em lotes; apresentar amostra | `scripts/seed.js`, `scripts/create-sample.js`, `exercicios/Parte-4-amostra.json`, `docs/Parte-4-seed.md` | Seed rodou em MongoDB temporário e as contagens foram validadas; amostra anexada |
-| Tarefa 1 | Modelar avaliações e histórico; apresentar JSON, embedding/referencing e justificativa **em `SOLUCAO.md`** | `docs/Tarefa-1-modelagem.md`, `src/models.js` | **Parcial no formato**: conteúdo está em outro arquivo; `SOLUCAO.md` contém apenas a Tarefa 3 |
-| Tarefa 2 | Executar dois pipelines diretamente no MongoDB e **apresentar os resultados em relatório** | `src/analytics.js`, `docs/Tarefa-2-agregacoes.md` | **Parcial no relatório**: pipelines e testes existem, mas o documento apresenta instruções/código, sem as tabelas de resultado da base semeada |
-| Tarefa 3 | `explain` antes/depois, índice ESR e comparação de métricas em `SOLUCAO.md` | `scripts/explain.js`, `SOLUCAO.md` | Comparação executada em 100k documentos; `COLLSCAN` 124 ms/100.000 docs → `IXSCAN` 4 ms/593 docs |
-| Tarefa 4 | Entregar função/script de checkout transacional com cinco passos atômicos e rollback | `src/marketplace.js`, `tests/mongodb.test.js` | **Parcial na integração**: a transação e o rollback foram testados na API; os campos do seed diferem dos modelos da API, então o checkout não funciona diretamente com os documentos do seed |
+| Tarefa 1 | Modelar avaliações e histórico; apresentar JSON, embedding/referencing e justificativa **em `SOLUCAO.md`** | `SOLUCAO.md`, `docs/Tarefa-1-modelagem.md`, `src/models.js` | Entregue; resumo, dez avaliações recentes e histórico completo referenciado |
+| Tarefa 2 | Executar dois pipelines diretamente no MongoDB e **apresentar os resultados em relatório** | `src/analytics.js`, `docs/Tarefa-2-agregacoes.md`, `docs/Tarefa-2-resultados.md` | Entregue; tabelas reais da base com 100 mil pedidos |
+| Tarefa 3 | `explain` antes/depois, índice ESR e comparação de métricas em `SOLUCAO.md` | `scripts/explain.js`, `SOLUCAO.md`, `docs/Tarefa-3-explain.json` | Entregue; `COLLSCAN` 135 ms/100.000 docs → `IXSCAN` 6 ms/489 docs |
+| Tarefa 4 | Entregar função/script de checkout transacional com cinco passos atômicos e rollback | `src/checkout.js`, `docs/Tarefa-4-resultado.md` | Entregue; compra e duas falhas com rollback na base do seed |
 
 ## Forma de entrega indicada pelos prints
 
@@ -23,10 +23,10 @@ Os prints não exigem capturas de tela como formato específico. Eles pedem: có
 
 ## Testes e limitações do ambiente
 
-`npm test` passou (2 testes). Um MongoDB temporário em replica set validou endpoints, criação de usuário/produto, listagem, compra, redução de estoque/carteira, rollback, ambos os pipelines e uso do índice (`IXSCAN`). Outro MongoDB temporário executou o seed completo, confirmou contagens exatas, campos dos pedidos, ausência de índices não solicitados e mediu a consulta antes/depois do índice.
+`npm test` passou (2 testes). `npm run capture:part2` executou a sequência pedida da API em memória. `npm run report:all` executou o seed completo, as agregações, o explain e o checkout com rollback em MongoDB temporário. A API Mongoose também foi iniciada com `npm run dev` e exercitada via HTTP: pedido pago de R$ 500, estoque 5 → 3.
 
-Não há `mongod` instalado e o Docker Desktop não está iniciado; por isso os dados de demonstração foram executados em instâncias temporárias de teste, não ficaram em um banco local persistente. A amostra JSON anexada contém documentos reais desse seed temporário. O `npm install` dependeu de `--strict-ssl=false` devido a certificado da rede; essa opção não foi salva no projeto. Para transações locais, use replica set (o URI exemplo usa `replicaSet=rs0`).
+Não foi encontrado um serviço `mongod` ativo nem MongoDB na porta 27017; por isso os dados de demonstração foram executados no binário real do MongoDB iniciado temporariamente pelo projeto, sem banco local persistente. A amostra JSON anexada contém documentos reais desse seed. Para persistência entre execuções, é preciso configurar uma URI MongoDB própria em `.env`. Para transações locais, use replica set (o URI exemplo usa `replicaSet=rs0`).
 
 ## Como rodar
 
-Copie `.env.example` para `.env`, configure um MongoDB replica set, rode `npm install`, `npm test`, `npm run seed` e `npm run report:explain`. O seed apaga o banco selecionado antes de popular; use uma base descartável.
+Rode `npm ci`, `npm run capture:part2`, `npm test`, `npm run report:all` e `npm run dev`. Para banco persistente, copie `.env.example` para `.env`, configure um MongoDB replica set e use `npm start`. `npm run seed` apaga o banco selecionado antes de popular; use uma base descartável.

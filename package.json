@@ -6,7 +6,10 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
+    "dev": "node scripts/dev.js",
     "seed": "node scripts/seed.js",
+    "capture:part2": "node scripts/capture-part2.js",
+    "report:all": "node scripts/generate-results.js",
     "test": "node --test",
     "test:mongodb": "node --test tests/mongodb.test.js",
     "report:explain": "node scripts/explain.js"
