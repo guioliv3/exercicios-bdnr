@@ -1,5 +1,7 @@
 # SOLUÇÃO — Engenharia de Dados com MongoDB
 
+<a id="tarefa-1"></a>
+
 ## Tarefa 1 — Modelagem e evolução de schema
 
 Um produto popular mantém somente as dez avaliações mais recentes incorporadas. O total e a soma das notas ficam no próprio produto; a média exibida é `sum / count`. A coleção `reviews` preserva todas as avaliações, com referências ao produto e ao autor:
@@ -35,6 +37,8 @@ O histórico de status fica incorporado ao pedido, pois pertence ao seu ciclo de
 ```
 
 Se as mudanças de status passarem a ser ilimitadas, o histórico deve migrar para uma coleção `orderEvents` referenciada pelo pedido. A modelagem detalhada está em [Tarefa-1-modelagem.md](docs/Tarefa-1-modelagem.md).
+
+<a id="tarefa-3"></a>
 
 ## Tarefa 3 — Diagnóstico e otimização
 

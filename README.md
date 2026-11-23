@@ -7,12 +7,12 @@ Projeto Node.js/Express para os exercícios de marketplace e engenharia de dados
 | Exercício | Implementação | Evidência e apresentação | Situação atual |
 |---|---|---|---|
 | Parte 1 — Marketplace em memória | [API da Parte 1](parte1/index.js) | [Visão geral e execução](docs/Parte-1-visao-geral.md) | Implementado. |
-| Parte 2 — Teste da API | [Reprodução automática](scripts/capture-part2.js) | [Cinco respostas e estoque final](docs/Parte-2-resultado.json) | Executado: pedido de R$ 500 e estoque de 5 para 3. |
+| Parte 2 — Teste da API | [Reprodução automática](scripts/capture-part2.js) | [Relatório do teste](docs/Parte-2-teste-api.md), [respostas completas](docs/Parte-2-resultado.json) | Executado: pedido de R$ 500 e estoque de 5 para 3. |
 | Parte 3 — Persistência | [Modelos Mongoose](src/models.js), [API](src/marketplace.js), [inicialização](src/index.js) | [Teste HTTP](docs/Parte-3-resultado.md), [configuração](.env.example) | Implementado e testado em MongoDB real temporário. |
 | Parte 4 — Seed | [Script](scripts/seed.js) | [Amostra do banco](exercicios/Parte-4-amostra.json), [instruções](docs/Parte-4-seed.md) | Executado: 1.000 produtos, 5.000 usuários e 100.000 pedidos. |
-| Tarefa 1 — Modelagem | [Schemas](src/models.js) | [SOLUCAO.md](SOLUCAO.md), [explicação detalhada](docs/Tarefa-1-modelagem.md) | JSON, embedding, referências e limite de avaliações documentados. |
+| Tarefa 1 — Modelagem | [Schemas](src/models.js) | [Resposta da Tarefa 1](SOLUCAO.md#tarefa-1), [explicação detalhada](docs/Tarefa-1-modelagem.md) | JSON, embedding, referências e limite de avaliações documentados. |
 | Tarefa 2 — Agregações | [Pipelines](src/analytics.js) | [Relatório com resultados](docs/Tarefa-2-resultados.md), [consultas](docs/Tarefa-2-agregacoes.md) | Executado sobre 100.000 pedidos. |
-| Tarefa 3 — Índice ESR | [Script de explain](scripts/explain.js) | [SOLUCAO.md](SOLUCAO.md), [métricas brutas](docs/Tarefa-3-explain.json) | `COLLSCAN` → `IXSCAN` medido na base completa. |
+| Tarefa 3 — Índice ESR | [Script de explain](scripts/explain.js) | [Resposta da Tarefa 3](SOLUCAO.md#tarefa-3), [métricas brutas](docs/Tarefa-3-explain.json) | `COLLSCAN` → `IXSCAN` medido na base completa. |
 | Tarefa 4 — Transação ACID | [Checkout para a base do seed](src/checkout.js) | [Resultado e rollback](docs/Tarefa-4-resultado.md) | Compra, débito, baixa de estoque e dois casos de falha validados. |
 
 O [relatório de entrega](exercicios/RELATORIO-ENTREGA.md) detalha os requisitos e as limitações observadas. Em cada atividade da plataforma, envie o link direto para o arquivo de evidência correspondente.
